@@ -75,17 +75,18 @@
             },
         },
         submitHandler: function (form) {
-            $(form).ajaxSubmit({
+            // use this if you want but the form action should suffice
+           /* $(form).ajaxSubmit({
                 type: "POST",
                 data: $(form).serialize(),
-                url: "sendmail.php",
+                url: "https://formspree.io/xwkrwlrk",
                 success: function () {
                     $('#contact-form #success').fadeIn();
                 },
                 error: function () {
                     $('#contact-form #error').fadeIn();
                 }
-            });
+            });*/
         }
     });
 
