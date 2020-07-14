@@ -79,7 +79,7 @@
             $.ajax({
                 method: "POST",
                 dataType: "json",
-                data: {formData},
+                data: formData,
                 url: "https://formspree.io/xwkrwlrk",
                 success: function () {
                     $('#contact-form #success').fadeIn();
