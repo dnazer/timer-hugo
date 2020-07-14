@@ -48,7 +48,7 @@
         rules: {
             name: {
                 required: true,
-                minlength: 4
+                minlength: 2
             },
             email: {
                 required: true,
@@ -75,18 +75,23 @@
             },
         },
         submitHandler: function (form) {
-            // use this if you want but the form action should suffice
-           /* $(form).ajaxSubmit({
-                type: "POST",
-                data: $(form).serialize(),
+            // currently formspree redirects so the success and error responses
+            // are redundant
+            var formData = $(form).serialize();
+            $(form).ajax({
+                method: "POST",
+                dataType: "json",
+                data: {formData},
                 url: "https://formspree.io/xwkrwlrk",
                 success: function () {
                     $('#contact-form #success').fadeIn();
                 },
                 error: function () {
                     $('#contact-form #error').fadeIn();
+                },
+                complete: function () {
                 }
-            });*/
+            });
         }
     });
 
