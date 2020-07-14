@@ -75,10 +75,8 @@
             },
         },
         submitHandler: function (form) {
-            // currently formspree redirects so the success and error responses
-            // are redundant
             var formData = $(form).serialize();
-            $(form).ajax({
+            $.ajax({
                 method: "POST",
                 dataType: "json",
                 data: {formData},
